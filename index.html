@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Medha & Ayush | Wedding Invitation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Hind:wght@400;500;600&display=swap');
+:root{--wine:#641d2e;--rose:#a84b60;--gold:#c89b50;--cream:#fff8ee;--ink:#3b292b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eadfd5;color:var(--ink);font-family:Hind,sans-serif}
+.site{max-width:560px;margin:auto;background:var(--cream);min-height:100vh;box-shadow:0 0 40px #30151d2b;overflow:hidden}
+.screen{min-height:100vh;position:relative;display:none;align-items:center;justify-content:center;text-align:center;padding:28px;overflow:hidden}
+.screen.active{display:flex}.screen:before,.screen:after{content:"";position:absolute;border:1px solid #c89b5055;border-radius:50%;pointer-events:none}
+.screen:before{width:430px;height:430px;top:-230px;left:-240px}.screen:after{width:430px;height:430px;bottom:-230px;right:-240px}
+.cover{background:radial-gradient(circle at 50% 40%,#fffdf8,#f4e0d3 75%);flex-direction:column}
+.cover .small{letter-spacing:5px;font-size:11px;color:var(--wine);text-transform:uppercase}.flower{font-size:48px;color:var(--gold);margin:18px}
+.envelope{width:290px;height:190px;position:relative;margin:18px auto 8px;cursor:pointer;filter:drop-shadow(0 15px 15px #4b202522)}
+.env-body{position:absolute;inset:0;background:#fffaf1;border:2px solid var(--gold);border-radius:4px;overflow:hidden}
+.env-body:before,.env-body:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid;z-index:2}
+.env-body:before{left:0;border-width:0 0 145px 145px;border-color:transparent transparent #f0d9c9 transparent}
+.env-body:after{right:0;border-width:145px 0 0 145px;border-color:transparent transparent transparent #f0d9c9}
+.flap{position:absolute;z-index:5;top:0;left:0;width:0;height:0;border-left:145px solid transparent;border-right:145px solid transparent;border-top:100px solid #ead0c0;transform-origin:top;transition:.9s ease;filter:drop-shadow(0 1px 0 #c89b50)}
+.seal{position:absolute;z-index:7;top:78px;left:50%;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:var(--wine);color:#f9d99e;border:2px solid var(--gold);display:grid;place-items:center;font-family:serif;font-size:22px;transition:.55s ease .15s}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}.envelope.open .seal{transform:translateX(-50%) scale(.7);opacity:0}
+.hint{font-size:13px;color:#80666a;margin-top:10px}.tap{color:var(--wine);font-weight:600}
+.content{min-height:100vh;background:radial-gradient(circle at 50% 20%,#fffdf8,#f8e7dc);flex-direction:column}
+.reveal{animation:up .9s ease both}@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.script{font-family:'Great Vibes',cursive;color:var(--wine);font-size:72px;line-height:.78}.amp{font:500 32px 'Cormorant Garamond';color:var(--gold);margin:13px}.date{font:500 21px 'Cormorant Garamond';letter-spacing:4px;color:var(--wine);margin-top:26px}.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}h2{font:500 42px 'Cormorant Garamond';color:var(--wine);margin:8px 0 15px}.line{width:90px;height:1px;background:var(--gold);margin:18px auto 28px}.next{margin-top:35px;border:1px solid var(--gold);background:#fffaf1;color:var(--wine);border-radius:50px;padding:12px 23px;font-family:Hind;cursor:pointer}
+.parents{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px}.parent{background:#fffdf8;border:1px solid #ddc29d;border-radius:18px;padding:19px 8px}.parent b{display:block;font:600 24px 'Cormorant Garamond';color:var(--wine);margin-bottom:7px}.parent span{font-size:14px;line-height:1.7}
+.event{width:100%;background:#fffdf8;border:1px solid #dfc5a1;border-radius:20px;padding:19px;margin:8px 0;box-shadow:0 8px 18px #6b332012}.event .day{font-size:11px;letter-spacing:3px;color:var(--gold)}.event h3{font:600 26px 'Cormorant Garamond';color:var(--wine);margin:6px}.event p{margin:1px;color:#725b60}
+.note{font:400 22px/1.6 'Cormorant Garamond';color:#5e444a;max-width:470px}.heart{font-size:38px;color:var(--rose);margin:15px}.signature{font:44px 'Great Vibes';color:var(--wine);margin-top:20px}
+.map{width:100%;height:210px;border:0;border-radius:18px;margin-top:15px}.maps{display:inline-block;margin-top:14px;background:var(--wine);color:white;text-decoration:none;padding:12px 22px;border-radius:30px}
+footer{padding:30px;text-align:center;background:#ead1c6;color:#6b4b51;font:18px 'Cormorant Garamond'}@media(max-width:430px){.parents{grid-template-columns:1fr}.script{font-size:64px}h2{font-size:37px}}
+</style>
+</head>
+<body>
+<div class="site">
+
+<section class="screen cover active" id="cover">
+  <div class="small">A little envelope • A lifetime of love</div>
+  <div class="flower">❧ ✦ ❧</div>
+  <div class="envelope" id="env" onclick="openInvite()">
+    <div class="env-body"></div><div class="flap"></div><div class="seal">♥</div>
+  </div>
+  <div class="hint"><span class="tap">Touch the envelope</span><br>to open your invitation</div>
+</section>
+
+<section class="screen content" id="s1">
+  <div class="reveal">
+    <div class="eyebrow">With the blessings of our families</div>
+    <div class="flower">❧</div>
+    <div class="script">Medha</div><div class="amp">&amp;</div><div class="script">Ayush</div>
+    <div class="date">25 • NOVEMBER • 2026</div>
+    <button class="next" onclick="show('s2')">Our Family ✦</button>
+  </div>
+</section>
+
+<section class="screen content" id="s2">
+  <div class="reveal" style="width:100%">
+    <div class="eyebrow">With love & blessings</div><h2>Our Families</h2><div class="line"></div>
+    <div class="parents">
+      <div class="parent"><b>Medha</b><span>Mrs. Mamta<br>&amp; Mr. Ashok Pandey</span></div>
+      <div class="parent"><b>Ayush</b><span>Mrs. Krishna<br>&amp; Mr. Ashish Upadhyay</span></div>
+    </div>
+    <button class="next" onclick="show('s3')">Wedding Festivities ✦</button>
+  </div>
+</section>
+
+<section class="screen content" id="s3">
+  <div class="reveal" style="width:100%">
+    <div class="eyebrow">Save the dates</div><h2>Wedding Festivities</h2><div class="line"></div>
+    <div class="event"><div class="day">23 NOVEMBER</div><h3>🌿 Haldi Tel</h3><p>6:00 PM</p><h3>🌿 Mehndi</h3><p>9:00 PM</p></div>
+    <div class="event"><div class="day">24 NOVEMBER</div><h3>🌼 Haldi Carnival</h3><p>11:00 AM</p><h3>🎶 Sangeet</h3><p>7:00 PM</p></div>
+    <div class="event"><div class="day">25 NOVEMBER</div><h3>🥁 Baarat &amp; Reception</h3><p>7:00 PM</p></div>
+    <button class="next" onclick="show('s4')">The Celebration ✦</button>
+  </div>
+</section>
+
+<section class="screen content" id="s4">
+  <div class="reveal" style="width:100%">
+    <div class="eyebrow">Where our forever begins</div><h2>Milan Lawn</h2><div class="line"></div>
+    <p class="note" style="font-size:18px">Maharajpur, Mandla</p>
+    <iframe class="map" loading="lazy" src="https://www.google.com/maps?q=Milan%20Lawn%2C%20Maharajpur%2C%20Mandla&output=embed"></iframe>
+    <a class="maps" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Milan%20Lawn%2C%20Maharajpur%2C%20Mandla">Open Google Maps ↗</a>
+    <button class="next" onclick="show('s5')">A Note for You ✦</button>
+  </div>
+</section>
+
+<section class="screen content" id="s5">
+  <div class="reveal">
+    <div class="flower">❧ ♥ ❧</div>
+    <div class="eyebrow">From our hearts</div>
+    <h2>Dear Family &amp; Friends</h2><div class="line"></div>
+    <div class="note">
+      Your love has been a beautiful part of our journey, and as we begin this new chapter together, we would be truly blessed to have you by our side.
+      <br><br>
+      Please join us with your family, share our laughter, dance with us, and shower us with your love and blessings. Your presence will make our celebration complete.
+    </div>
+    <div class="heart">♥</div>
+    <div class="signature">With all our love,<br>Medha &amp; Ayush</div>
+    <button class="next" onclick="show('s6')">See You There ✦</button>
+  </div>
+</section>
+
+<section class="screen content" id="s6">
+  <div class="reveal">
+    <div class="eyebrow">The countdown begins</div>
+    <h2>See You on Our Big Day!</h2><div class="line"></div>
+    <div style="font:26px 'Cormorant Garamond';color:#651d2e">25 November 2026 • 7:00 PM</div>
+    <div class="flower">✦ ❧ ✦</div>
+    <div class="note" style="font-size:19px">Come celebrate love, laughter, music and a lifetime together with us. ❤️</div>
+    <button class="next" onclick="show('cover')">Replay Invitation ↺</button>
+  </div>
+</section>
+<footer>Made with ♥ for <b>Medha &amp; Ayush</b></footer>
+</div>
+
+<script>
+function show(id){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function openInvite(){
+ const e=document.getElementById('env'); e.classList.add('open');
+ setTimeout(()=>show('s1'),900);
+}
+</script>
+</body>
+</html>
